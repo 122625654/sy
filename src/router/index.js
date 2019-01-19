@@ -4,16 +4,22 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // 引入首页组件
-import Home from '@/components/tabbar/Home'
+import Home from '@/components/tabbar/Home.vue'
 
 // 引入会员
-import Member from '@/components/tabbar/Member'
+import Member from '@/components/tabbar/Member.vue'
 
 // 引入购物车
-import Cart from '@/components/tabbar/Cart'
+import Cart from '@/components/tabbar/Cart.vue'
 
 // 引入搜索
-import Search from '@/components/tabbar/Search'
+import Search from '@/components/tabbar/Search.vue'
+
+// 引入新闻
+import NewsList from '@/components/newslist/Newslist'
+
+// 引入评论
+import Newinfo from '@/components/newslist/Newinfo'
 
 
 // 3.注册
@@ -42,8 +48,14 @@ export default new Router({
       path: '/search',
       component: Search
     },
-
-
+    {
+      path: '/home/newslist',
+      component: NewsList
+    },
+    {
+      path: '/home/newinfo/:id',
+      component: Newinfo
+    }
   ]
 
 })

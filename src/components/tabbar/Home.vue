@@ -11,10 +11,11 @@
 </template>
 
 <script>
+// 请提示按钮
 import { Toast } from "vant";
 
-// 引入组件
-import Comtion from '../one/Comtion';
+// 引入6张图片组件
+import Comtion from '../subassembly/img';
 
 export default {
    data: () => ({
@@ -28,7 +29,7 @@ export default {
     getdata() {
       this.$http.get("api/getlunbo").then(
         res => {
-          console.log(res);
+          // console.log(res);
           // 解析
           const {
             status,
@@ -37,7 +38,7 @@ export default {
 
           if (status == 200) {
             // console.log(message);
-            Toast("提示内容");
+            // Toast("提示内容");
             this.imgs = message;
           } else {
           }

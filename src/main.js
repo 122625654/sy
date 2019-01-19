@@ -13,16 +13,19 @@ import axios from 'axios'
 Vue.prototype.$http=axios
 
 axios.defaults.baseURL = 'http://localhost:5000/';
-
 // // 全局启用emulateJsON 选项
 // Vue.options.emulateJSON = true
 
 Vue.config.productionTip = false
 
+// 引入 过滤器
+import moment from 'moment'
+Vue.use(moment)
 
-// 导入animate.css
-import 'animate.css/animate.css'
-
+Vue.filter('tiem',(data,arg='YYYY-MM-DD HH:mm:ss')=>{
+  return   moment(data).format(arg)
+  
+})
 
 // 头部 vant 引入
 import {
@@ -32,7 +35,9 @@ import {
   Swipe,
   SwipeItem,
   Row,
-  Col
+  Col,
+  Card,
+  Button
 } from 'vant'
 
 Vue.use(Tabbar)
@@ -42,9 +47,8 @@ Vue.use(Tabbar)
   .use(SwipeItem)
   .use(Row)
   .use(Col)
-Vue
-
-
+  .use(Card)
+  .use(Button)
 
 new Vue({
   el: '#app',

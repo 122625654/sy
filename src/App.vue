@@ -45,6 +45,7 @@ export default {
 // 插件动画
 .app{
   overflow-x: hidden;
+  padding-bottom: 60px;
 }
 
 // .v-leave-to{
