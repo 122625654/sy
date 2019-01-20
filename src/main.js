@@ -10,11 +10,11 @@ import router from './router/index'
 // 引入 axios                                                                   
 import axios from 'axios'
 // 挂载
-Vue.prototype.$http=axios
+Vue.prototype.$http = axios
 
 axios.defaults.baseURL = 'http://localhost:5000/';
 // // 全局启用emulateJsON 选项
-// Vue.options.emulateJSON = true
+Vue.options.emulateJSON = true
 
 Vue.config.productionTip = false
 
@@ -22,9 +22,9 @@ Vue.config.productionTip = false
 import moment from 'moment'
 Vue.use(moment)
 
-Vue.filter('tiem',(data,arg='YYYY-MM-DD HH:mm:ss')=>{
-  return   moment(data).format(arg)
-  
+Vue.filter('tiem', (data, arg = 'YYYY-MM-DD HH:mm:ss') => {
+  return moment().format(arg)
+
 })
 
 // 头部 vant 引入
@@ -37,7 +37,10 @@ import {
   Row,
   Col,
   Card,
-  Button
+  Button,
+  Tab,
+  Tabs,
+  Lazyload
 } from 'vant'
 
 Vue.use(Tabbar)
@@ -49,6 +52,9 @@ Vue.use(Tabbar)
   .use(Col)
   .use(Card)
   .use(Button)
+  .use(Tab)
+  .use(Tabs)
+  .use(Lazyload)
 
 new Vue({
   el: '#app',

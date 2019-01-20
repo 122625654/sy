@@ -16,11 +16,19 @@ import Cart from '@/components/tabbar/Cart.vue'
 import Search from '@/components/tabbar/Search.vue'
 
 // 引入新闻
-import NewsList from '@/components/newslist/Newslist'
+import NewsList from '@/components/newslist/Newslist.vue'
 
-// 引入评论
-import Newinfo from '@/components/newslist/Newinfo'
+// 引入新闻评论
+import Newinfo from '@/components/newslist/Newinfo.vue'
 
+// 引入图片分享
+import Photolist from '@/components/photolist/Photolist.vue'
+
+// 引入图片评论
+import Photoinfo from '@/components/photolist/Photoinfo.vue'
+
+// 引入商品购买
+import Goodslist from '@/components/goodslist/Goodslist.vue'
 
 // 3.注册
 Vue.use(Router)
@@ -55,6 +63,18 @@ export default new Router({
     {
       path: '/home/newinfo/:id',
       component: Newinfo
+    },
+    {
+      path: '/home/photolist',
+      component: Photolist
+    },
+    {
+      path: '/home/photoinfo/:id',
+      component: Photoinfo
+    },
+    {
+      path:'/home/goodslist',
+      component: Goodslist
     }
   ]
 
